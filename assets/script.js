@@ -1,6 +1,9 @@
 var taskInput = document.querySelector("#task");
 var signUpButton = document.querySelector("#save");
 var storedTasks = [];
+var currentDay = document.querySelector("#currentDay");
+
+
 
 renderLastRegistered();
 
@@ -17,3 +20,10 @@ signUpButton.addEventListener("click", function(event) {
   localStorage.setItem("#task", task);
   renderLastRegistered();
 });
+
+renderCurrentTime();
+
+function renderCurrentTime()  {
+  currentDay = moment().format('MMMM Do YYYY, h:mm:ss a');
+  currentDay.textContent = currentDay;
+}
